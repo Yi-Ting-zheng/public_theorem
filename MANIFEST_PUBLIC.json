@@ -1,6 +1,6 @@
 {
   "set": "public_theorem",
-  "generated_at": "2026-09-30T19:31:12",
+  "generated_at": "2026-09-30T19:33:41",
   "file_count": 46,
   "note": "公开集哈希锁。脱敏留痕见 REDACTION_REPORT.md；校验器见 verify_public.py（含 Zenodo v1.0.0 占位符复发防线 F4）。",
   "files": {
@@ -17,8 +17,8 @@
       "bytes": 3099
     },
     "CHANGELOG.md": {
-      "sha256": "f12328c74301a14d707a087c92a599dcb43f9542b4cb91e756b449b6b7cfcaf5",
-      "bytes": 2702
+      "sha256": "502272a128fbba19598b0b9691ac0f8286766ae0f36d85d44c6a806d9d34b184",
+      "bytes": 3418
     },
     "LICENSE.md": {
       "sha256": "950f57a9e28822379522ec3fc1e5289089b9b156a20c69195508df1e10bff032",
@@ -109,8 +109,8 @@
       "bytes": 4554
     },
     "PI_PI/脚本/pipi_d3_s83_numeric_out.txt": {
-      "sha256": "d2ba4df434d4c67313921d598eaa05f6149e4f217fea47bf0dc94609b68b5970",
-      "bytes": 4091
+      "sha256": "e3a98542fbeb5c9bb4b888e0ebb0ae702b881c72d44aee65b83df4a90317c82f",
+      "bytes": 4022
     },
     "PI_PI/脚本/pipi_d3_warroom_record.py": {
       "sha256": "13db82536bb8b55176df7aece94333339ca990d4ba2c1c0c36354244400dcd8a",
@@ -125,8 +125,8 @@
       "bytes": 11737
     },
     "PI_PI/脚本/pipi_f1_check.py": {
-      "sha256": "d3465eff378e218369d7d10846cf47f869c936cbd79d7d2e1766b999bef87c37",
-      "bytes": 3141
+      "sha256": "a8ec3f0a97d0d8530df0397ab1a05666848e0d5dd562d952a8273e5a179a8e3d",
+      "bytes": 3127
     },
     "PI_PI/脚本/pipi_gap1a_test.py": {
       "sha256": "14bcade9417759796fb8d245bc5d490494ba1cafba1cd1cda58fb6095c4cd04f",
