@@ -1,7 +1,7 @@
 {
   "set": "public_theorem",
-  "generated_at": "2026-09-30T19:33:41",
-  "file_count": 46,
+  "generated_at": "2026-09-30T19:50:25",
+  "file_count": 47,
   "note": "公开集哈希锁。脱敏留痕见 REDACTION_REPORT.md；校验器见 verify_public.py（含 Zenodo v1.0.0 占位符复发防线 F4）。",
   "files": {
     ".gitattributes": {
@@ -17,8 +17,8 @@
       "bytes": 3099
     },
     "CHANGELOG.md": {
-      "sha256": "502272a128fbba19598b0b9691ac0f8286766ae0f36d85d44c6a806d9d34b184",
-      "bytes": 3418
+      "sha256": "be8162dbc069cda2e08a89941a9e728137056c55a9b871cbe9187076da014cdb",
+      "bytes": 3804
     },
     "LICENSE.md": {
       "sha256": "950f57a9e28822379522ec3fc1e5289089b9b156a20c69195508df1e10bff032",
@@ -43,6 +43,10 @@
     "VERIFY_NOTES.md": {
       "sha256": "91caac7a334e1c6a68558e75a0efe4af78a524409e9e759c0b0ad37b6ff9b031",
       "bytes": 2310
+    },
+    "release_preflight.py": {
+      "sha256": "3203f23051472de6adc9eb47ce976a1855f7352eeab2f8b499c179cb976f8062",
+      "bytes": 7991
     },
     "verify_public.py": {
       "sha256": "2c67c4c7fbd098ca2be25537b06492483517886c605461bfde808b1bd03f01ac",
