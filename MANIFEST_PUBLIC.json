@@ -1,6 +1,6 @@
 {
   "set": "public_theorem",
-  "generated_at": "2026-09-30T19:50:25",
+  "generated_at": "2026-09-30T22:48:01",
   "file_count": 47,
   "note": "公开集哈希锁。脱敏留痕见 REDACTION_REPORT.md；校验器见 verify_public.py（含 Zenodo v1.0.0 占位符复发防线 F4）。",
   "files": {
@@ -13,12 +13,12 @@
       "bytes": 26
     },
     ".zenodo.json": {
-      "sha256": "f7b18925dc80a0ce18dc703e4050d834be9d18e2208fc449014d164246c5f036",
-      "bytes": 3099
+      "sha256": "55ba6e4e35722485fcc716ce627943877c85e845e9ae5f8bd5cd235670754457",
+      "bytes": 2884
     },
     "CHANGELOG.md": {
-      "sha256": "be8162dbc069cda2e08a89941a9e728137056c55a9b871cbe9187076da014cdb",
-      "bytes": 3804
+      "sha256": "cca35c73a0fe59590d091c0af61de5320fc1dec7485bd8816e6410154035c25f",
+      "bytes": 7037
     },
     "LICENSE.md": {
       "sha256": "950f57a9e28822379522ec3fc1e5289089b9b156a20c69195508df1e10bff032",
@@ -45,8 +45,8 @@
       "bytes": 2310
     },
     "release_preflight.py": {
-      "sha256": "3203f23051472de6adc9eb47ce976a1855f7352eeab2f8b499c179cb976f8062",
-      "bytes": 7991
+      "sha256": "80f261b6c38fd0778eff45eb60d62b94ef0c15fc9905f46375a790d4666b5783",
+      "bytes": 13117
     },
     "verify_public.py": {
       "sha256": "2c67c4c7fbd098ca2be25537b06492483517886c605461bfde808b1bd03f01ac",

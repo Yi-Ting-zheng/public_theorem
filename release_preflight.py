@@ -50,6 +50,66 @@ GIT = shutil.which("git")
 
 TEXT_EXT = {".py", ".md", ".json", ".yml", ".yaml", ".txt"}
 
+# --- Zenodo 词表（依据 legacy deposition schema / developers.zenodo.org）---
+# upload_type      : String  -> resource_type.type
+# publication_type : String  -> resource_type.subtype （upload_type=publication 时必填）
+# 实证缺陷（2026-09-30，Zenodo 面板）：写成嵌套对象
+#   "upload_type": {"type": "publication", "subtype": "workingpaper"}
+# 会让反序列化器产不出 resource_type，Zenodo 侧报
+#   metadata.resource_type: Missing data for required field
+# 而 ingest 失败。JSON 合法 ≠ Zenodo 接受，故必须逐条验 schema。
+ZENODO_UPLOAD_TYPES = {
+    "publication", "poster", "presentation", "dataset", "image", "video",
+    "software", "lesson", "physicalobject", "other",
+}
+ZENODO_PUBLICATION_TYPES = {
+    "softwaredocumentation", "taxonomictreatment", "technicalnote",
+    "thesis", "workingpaper", "other",
+}
+ZENODO_ACCESS_RIGHTS = {"open", "restricted", "embargoed", "closed"}
+
+
+def validate_zenodo_meta(meta: dict) -> list[str]:
+    blockers: list[str] = []
+
+    ut = meta.get("upload_type")
+    if ut is None:
+        blockers.append("缺 upload_type ⟹ Zenodo 退回默认 resource_type")
+    elif isinstance(ut, dict):
+        blockers.append(
+            "upload_type 是对象 %r ⟹ 应为扁平字符串" % sorted(ut)
+            + "（Zenodo 要 upload_type + publication_type 两个平级标量）"
+        )
+    elif ut not in ZENODO_UPLOAD_TYPES:
+        blockers.append("upload_type=%r 不在受控词表内" % ut)
+
+    if isinstance(ut, str) and ut == "publication":
+        pt = meta.get("publication_type")
+        if pt is None:
+            blockers.append("upload_type=publication 时缺 publication_type（平级键）")
+        elif not isinstance(pt, str):
+            blockers.append("publication_type 应为字符串，实为 %r" % type(pt).__name__)
+        elif pt not in ZENODO_PUBLICATION_TYPES:
+            blockers.append("publication_type=%r 不在受控词表内" % pt)
+
+    if isinstance(ut, dict) and "subtype" in ut:
+        blockers.append(
+            "upload_type.subtype 是**新版 resource_type 内部**的键名，"
+            "legacy schema 不认；应改为平级 publication_type"
+        )
+
+    ar = meta.get("access_right")
+    if ar is not None and ar not in ZENODO_ACCESS_RIGHTS:
+        blockers.append("access_right=%r 不在受控词表内" % ar)
+
+    if not blockers:
+        print("[OK] .zenodo.json 符合 Zenodo schema"
+              "（upload_type=%r%s）"
+              % (meta.get("upload_type"),
+                 ", publication_type=%r" % meta["publication_type"]
+                 if meta.get("publication_type") else ""))
+    return blockers
+
 
 def git(*args: str) -> tuple[int, str, str]:
     p = subprocess.run([GIT, *args], cwd=ROOT, capture_output=True,
@@ -109,7 +169,51 @@ def check_zenodo(tag: str) -> list[str]:
         print(f"[FAIL] .zenodo.json 字段缺失或含占位：{bad}")
         return [f".zenodo.json 字段异常 {bad}"]
     print("[OK] .zenodo.json 可解析，关键字段齐备")
-    return []
+    return validate_zenodo_meta(meta)
+
+
+def selftest() -> int:
+    """闸门自测：每条规则须有正例通过、反例被拦。反例 #1 是实际踩过的 payload。"""
+    base = {
+        "title": "t", "description": "d", "creators": [{"name": "n"}],
+        "license": "cc-by-4.0", "access_right": "open",
+    }
+    cases = [
+        ("正例: publication/workingpaper 平级标量",
+         dict(base, upload_type="publication", publication_type="workingpaper"), 0),
+        ("正例: software 扁平串（官方文档写法）",
+         dict(base, upload_type="software"), 0),
+        ("正例: presentation 无需 publication_type",
+         dict(base, upload_type="presentation"), 0),
+        ("反例: upload_type 嵌套对象+subtype（缺陷 3 实况）",
+         dict(base, upload_type={"type": "publication", "subtype": "workingpaper"}), 1),
+        ("反例: 嵌套对象且用 publication_type 子键（仍错，须平级）",
+         dict(base, upload_type={"type": "publication",
+                                 "publication_type": "workingpaper"}), 1),
+        ("反例: publication 缺 publication_type",
+         dict(base, upload_type="publication"), 1),
+        ("反例: upload_type 缺失", dict(base), 1),
+        ("反例: upload_type 词表外",
+         dict(base, upload_type="paper"), 1),
+        ("反例: publication_type 词表外",
+         dict(base, upload_type="publication", publication_type="preprint"), 1),
+        ("反例: access_right 词表外",
+         dict(base, upload_type="software", access_right="public"), 1),
+    ]
+    bad_pass = bad_miss = 0
+    for name, meta, expect_block in cases:
+        got = len(validate_zenodo_meta(dict(meta)))
+        blocked = got > 0
+        ok = blocked == bool(expect_block)
+        if not ok:
+            bad_pass += 0 if blocked else 1
+            bad_miss += 1 if blocked else 0
+        print("  [%s] %s（blockers=%d）" % ("通过" if ok else "不符", name, got))
+    print()
+    print("裁定：%s —— 漏拦 %d / 误拦 %d / 共 %d 例"
+          % ("✅ 全部符合预期" if not (bad_pass or bad_miss) else "❌",
+             bad_pass, bad_miss, len(cases)))
+    return 0 if not (bad_pass or bad_miss) else 1
 
 
 def check_archive_artifact(tag: str) -> list[str]:
@@ -166,7 +270,12 @@ def main() -> int:
     ap.add_argument("--allow-tag-behind-head", action="store_true")
     ap.add_argument("--git", dest="git_override", default=None,
                     help="git 可执行文件路径（git 不在 PATH 时使用）")
+    ap.add_argument("--selftest", action="store_true",
+                    help="只跑 Zenodo schema 校验器的正/反例自测")
     args = ap.parse_args()
+    if args.selftest:
+        print("发布前置闸门 | public_theorem | Zenodo schema 自测")
+        return selftest()
     if args.git_override:
         GIT = args.git_override
     if not GIT or not os.path.exists(GIT):

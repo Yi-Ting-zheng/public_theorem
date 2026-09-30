@@ -5,6 +5,24 @@
 > 本文件是 `MANIFEST_PUBLIC.json` 所要求的登记处。哈希锁的处置条款：
 > 「若为有意修改：重生成清单并在本文件记一笔」。
 
+## [Unreleased] — 待发 v1.0.1
+
+### 修复：`.zenodo.json` 混用 schema 代际 ⟹ Zenodo ingest 被拒（发布阻断级，**实证**）
+
+| 项 | 值 |
+|---|---|
+| 记录 | https://github.com/Yi-Ting-zheng/public_theorem/releases/tag/1.0.0 |
+| 症状 | Zenodo GitHub 集成 `Errors` 面板原文：`{'errors': "{'metadata': {'resource_type': ['Missing data for required field.']}}"}` |
+| 后果 | 无 Zenodo 版本记录、无版本 DOI（概念 DOI 恒定，但 0 个版本落地） |
+| 根因 | `.zenodo.json` 写成 `"upload_type": {"type": "publication", "subtype": "workingpaper"}`。Zenodo legacy 反序列化器的契约是**两个平级标量**：`upload_type`（String → `resource_type.type`）+ `publication_type`（String → `resource_type.subtype`）。`subtype` 是**新版 `resource_type` 内部**的键名，置于 `upload_type` 内不被识别 ⟹ 反序列化产不出 `resource_type` ⟹ 校验拒绝。`upload_type` 为对象（而非字符串）本身即足以致败 |
+| 修正 | 改为扁平 `"upload_type": "publication"` + 平级 `"publication_type": "workingpaper"` |
+| 依据 | ① Zenodo 官方文档示例为扁平 `"upload_type": "software"`；② legacy 受控词表列 `publication_type` ∈ {softwaredocumentation, taxonomictreatment, technicalnote, thesis, workingpaper, other}；③ Zenodo legacy schema 源码中 `upload_type = fields.String(attribute='resource_type.type')`、`publication_type` 映射 `resource_type.subtype` |
+| 为何闸门未拦 | `release_preflight.py` 闸门 3 原只验「JSON 可解析 + title/description/creators/license 齐备」。**JSON 合法 ≠ Zenodo 接受**——缺陷恰落在两者之间 |
+| 防线 | 闸门 3 增 `validate_zenodo_meta()`：按受控词表逐条验 `upload_type`（须字符串）/ `publication_type`（平级、词表内）/ `access_right`，并显式识别 `upload_type.subtype` 代际混用。新增 `--selftest`：**10 例正/反例，含本缺陷实际 payload**，漏拦 0 / 误拦 0 |
+| 同源缺陷（误判记录） | 曾把「Zenodo 侧无记录」误判为服务端性能退化（并发两仓库卡住更强化了误判）。**真实原因是本地 schema 非法，服务端为即时确定性拒绝**。教训：错误面板原文优先于服务端行为推测 |
+| 其他同步修正 | ① `description` 原含**字面换行**写入 JSON 字符串 ⟹ 文件本身非法 JSON（`json.JSONDecodeError`），已改为 `\n` 转义；② 原 HTML `<p>` 外壳未剥导致 Markdown 被 HTML 包裹，已剥除；③ 元数据声明「45 文件哈希锁」与 `MANIFEST_PUBLIC.json` 实际的 **47** 不符，已更正；④ 补文件末行换行 |
+| **未修复项（阻断 v1.0.1）** | 元数据 description 仍声明 C(m)=√2·e^(−iπm/8) 的证据为「**残差 ≤1.05e−4**」。高精度复算显示**原始** B 分支阶梯为 5.837e−4 → 2.550e−5 → 1.859e−5（首项即超过该界），且原始阶梯非单调——故该数是**振荡幅度**而非收敛残差；反对称化后为 A ≤4.42e−5 / B ≤1.836e−5。该表述须待 C(m) 复认证（m=1..8 扫描 + N=51201/dps=120 阶梯）完成后定稿。**在定稿前不发版**，避免把已失效的认证写入不可撤回的 DOI 元数据 |
+
 ## [v1.0.0] — 2026-09-30 首次公开归档
 
 ### 克隆可验证性修正（发布阻断级，已含于本版）
