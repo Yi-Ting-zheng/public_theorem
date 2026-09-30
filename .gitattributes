@@ -1,0 +1,24 @@
+# 强制所有文本文件以 LF 检出
+#
+# 理由（可复现性硬约束）：本仓库的 SHA256 哈希锁（MANIFEST_PUBLIC.json）锁的是
+# **文件字节**。在 core.autocrlf=true（Git for Windows 安装级默认）下，
+# 克隆会把 LF 转成 CRLF ⟹ 字节改变 ⟹ 哈希全部不匹配 ⟹ verify_public.py 必然 FAIL。
+#
+# 即：不给这一行，"哈希锁一致"只在作者机器上成立，公开可验证性是假的。
+# 二进制文件另行标记，避免被文本转换破坏。
+* text=auto eol=lf
+
+*.py   text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.txt  text eol=lf
+
+# 二进制：不做行尾转换
+*.png  binary
+*.jpg  binary
+*.pdf  binary
+*.zip  binary
+*.gz   binary
+*.mp4  binary

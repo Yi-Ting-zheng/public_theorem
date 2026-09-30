@@ -1,0 +1,74 @@
+{
+  "rules": [
+    {
+      "name": "内部记忆台账路径",
+      "hits": 0,
+      "files": []
+    },
+    {
+      "name": "本地用户目录",
+      "hits": 1,
+      "files": [
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_rev11_sync_changelog.py"
+      ]
+    },
+    {
+      "name": "工程根目录",
+      "hits": 2,
+      "files": [
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_rev14_fix.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_rev14_sync_emitter.py"
+      ]
+    },
+    {
+      "name": "工程根目录(单反斜杠)",
+      "hits": 17,
+      "files": [
+        "docs\\releases\\v02_M4_令模型\\M4-MILESTONE-04\\THEOREM-F_v1.0_勘误附录_W3-W4.md",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_d3_audit_diff.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_d3_fix_dollar_SUPERSEDED.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_d3_s83_emit.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_d3_s83_emit_v1_ERRONEOUS.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_d3_warroom_record.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_rev11_sync_changelog.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_rev11_sync_hashes.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_rev11_sync_manifest.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_rev11_verify_hashes.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_rev12_sync_manifest.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_rev13_sync_manifest.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_rev14_diag.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_rev14_fix.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_rev14_sync_emitter.py",
+        "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\脚本\\pipi_rev14_sync_manifest.py"
+      ]
+    },
+    {
+      "name": "其他Windows绝对路径",
+      "hits": 0,
+      "files": []
+    },
+    {
+      "name": "品牌-望易",
+      "hits": 1,
+      "files": [
+        "docs\\releases\\v02_M4_令模型\\M4-MILESTONE-04\\THEOREM-F_v1.0_勘误附录_W3-W4.md"
+      ]
+    },
+    {
+      "name": "品牌-wangyi",
+      "hits": 0,
+      "files": []
+    }
+  ],
+  "excluded": [
+    {
+      "file": "docs\\v_os\\math_cross_domain\\PI_PI_IRRATIONALITY\\MANIFEST_PIPI.json",
+      "reason": "内部哈希锁针对脱敏前内容，公开后必然失效；不公开理由已登记入 REDACTION_REPORT"
+    }
+  ],
+  "binary_passthrough": [],
+  "files": 35,
+  "bytes_in": 507946,
+  "bytes_out": 507882,
+  "generated_at": "2026-09-30T18:06:34"
+}

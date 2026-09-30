@@ -1,0 +1,34 @@
+{
+  "title": "统一大定理公开推导档案 (Unified Theorem: Public Derivation Archive, THEOREM-COND)",
+  "creators": [
+    {
+      "name": "Yi-Ting-zheng",
+      "affiliation": "Independent Research"
+    }
+  ],
+  "description": "<p><strong>性质</strong>：数学推导档案的可审查公开版。<strong>不是</strong>已完成的证明，<strong>不构成</strong>任何投资或应用承诺。</p><p><strong>真值层级</strong>：主结果 <code>THEOREM-COND</code>——精确恒等式与闭式均成立，但依赖 <code>GAP-OPEN</code> 引理 6.0（π/2 共振项的误差预算归属未证明），<strong>未证</strong>；π/2 处 Re a 修正项为 <code>THEOREM</code>（精确闭式）；共振系数 C(m)=√2·e^(−iπm/8) 与共振速率 √(mπ²/24) 为 <code>EMPIRICAL</code> 强证据（残差 ≤1.05e−4，解析推导未完成）；Re a 弧上全局单峰性 <code>GAP-OPEN</code>；π^π 无理 <code>GAP-OPEN</code>（百年未决，本课题不承诺证明）。</p><p><strong>已撤回的结论</strong>（编号不复用）：F44 旧阈值 min Re R' ≥ −a/(4m) 为 FALSIFIED（单点反例差恒为 −1/24）；F45 修正项指数 e^(−2π²/s) 为 FALSIFIED（正确首阶 e^(−π²/(2s))）；F43 振幅上界外推至共振速率属越权外推。每条撤回含原断言/证伪/取代者三要素。</p><p><strong>可审查性</strong>：勘误附录 append-only 双前缀 SHA256 守卫；公开集 45 文件哈希锁；脱敏留痕报告（21 处替换逐条登记）；发布校验器含 19 例自测（每条规则须有正例且反例不触发）；自审计裁决记录（SELF_AUDIT.md）：原始 FAIL 15 逐条裁定为真问题 2 / 规则误报 11 / 自引入 1，修复后复测 FAIL 0。</p><p><strong>引用义务</strong>：引用必须带真值层级。引用 THEOREM-COND 结论须连同其条件（GAP-OPEN 引理 6.0）与未证状态；剥离层级标签的引用违反许可。</p><p><strong>许可</strong>：文档与数学内容 CC-BY-4.0；脚本 MIT。</p>",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "upload_type": {
+    "type": "publication",
+    "subtype": "workingpaper"
+  },
+  "keywords": [
+    "infinite product",
+    "saddle point",
+    "resonance closed form",
+    "truth-level discipline",
+    "falsification ledger",
+    "GAP registration",
+    "proof audit trail",
+    "Richardson extrapolation",
+    "统一大定理",
+    "无穷乘积",
+    "共振闭式",
+    "真值分层",
+    "证伪台账",
+    "勘误附录"
+  ],
+  "notes": "Reproduce: python verify_public.py --selftest (19 cases) ; python verify_public.py (FAIL 0: 0 absolute paths / 0 internal codenames / 0 U+FFFD / 0 unfilled placeholders / hash lock consistent over 45 files). Sister repository audit: python mf_audit.py . (FAIL 0 / WARN 158 heuristic on historical records / INFO 8 declared record exemptions). Scripts under MIT; documents and mathematical content under CC-BY-4.0. Sister repository (methodology tooling + negative tests incl. false-positive controls): https://github.com/Yi-Ting-zheng/emf_demo",
+  "language": "zho"
+}

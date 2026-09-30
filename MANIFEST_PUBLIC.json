@@ -1,0 +1,192 @@
+{
+  "set": "public_theorem",
+  "generated_at": "2026-09-30T19:31:12",
+  "file_count": 46,
+  "note": "公开集哈希锁。脱敏留痕见 REDACTION_REPORT.md；校验器见 verify_public.py（含 Zenodo v1.0.0 占位符复发防线 F4）。",
+  "files": {
+    ".gitattributes": {
+      "sha256": "9a41eec99c47ea6654d47bfdb72995378b4e6be62347984eaa2ccafed743f81b",
+      "bytes": 762
+    },
+    ".gitignore": {
+      "sha256": "bb6bdb86e68289eef67d9256c6dd04797efd0bea4283f2f0f62b621e9aea26bc",
+      "bytes": 26
+    },
+    ".zenodo.json": {
+      "sha256": "f7b18925dc80a0ce18dc703e4050d834be9d18e2208fc449014d164246c5f036",
+      "bytes": 3099
+    },
+    "CHANGELOG.md": {
+      "sha256": "f12328c74301a14d707a087c92a599dcb43f9542b4cb91e756b449b6b7cfcaf5",
+      "bytes": 2702
+    },
+    "LICENSE.md": {
+      "sha256": "950f57a9e28822379522ec3fc1e5289089b9b156a20c69195508df1e10bff032",
+      "bytes": 4805
+    },
+    "README.md": {
+      "sha256": "da3bc10b55ed7ebf15092c25d139c67f74eee6a2730f05652051b9f008f55fc7",
+      "bytes": 6272
+    },
+    "REDACTION_REPORT.json": {
+      "sha256": "d8ccb78942170419c6d3880362b230a1f303c222d6f83c2d41ce0f171889320b",
+      "bytes": 2962
+    },
+    "REDACTION_REPORT.md": {
+      "sha256": "68a1ee800f485883f1b51eab3e87ce56763bab734532b0ef4084038670ec05c4",
+      "bytes": 1730
+    },
+    "SELF_AUDIT.md": {
+      "sha256": "1861b4405ccb0b8cb8ff5924bf1c1a56f5ed905f813b18564bf71fcba2146bd8",
+      "bytes": 6875
+    },
+    "VERIFY_NOTES.md": {
+      "sha256": "91caac7a334e1c6a68558e75a0efe4af78a524409e9e759c0b0ad37b6ff9b031",
+      "bytes": 2310
+    },
+    "verify_public.py": {
+      "sha256": "2c67c4c7fbd098ca2be25537b06492483517886c605461bfde808b1bd03f01ac",
+      "bytes": 14359
+    },
+    "PI_PI/README.md": {
+      "sha256": "2054e422c10a1a6b9b7629c8102ab660cbf19211888c70ea14d4a43ea521b02a",
+      "bytes": 22916
+    },
+    "PI_PI/00_立项/立项勘误与定位修正.md": {
+      "sha256": "174ae8badca46284f73a8913b284a043678e547093aff86561fa8c10332581b5",
+      "bytes": 11136
+    },
+    "PI_PI/01_文献/文献基线.md": {
+      "sha256": "2b05473a275b95208349fad479630578150f7a0d1be7079b76067e1098ef9f96",
+      "bytes": 52590
+    },
+    "PI_PI/01_文献/检索日志_GAP3_第2轮.md": {
+      "sha256": "986b2ea6a942367cc87935d3ed103abcbfece899276eff2b276a489ee7381ff8",
+      "bytes": 6794
+    },
+    "PI_PI/01_文献/检索日志_R1_R2_第1轮.md": {
+      "sha256": "6118dc86ff653750b1e97b75be407b4582f7be10db5ce12a160456ad794c7d3b",
+      "bytes": 8866
+    },
+    "PI_PI/02_工具状态/工具适用边界矩阵.md": {
+      "sha256": "9db8d3a59c283bc729c2f6a5de89445743ce16abe13857a8fdc64fe723467b7c",
+      "bytes": 39478
+    },
+    "PI_PI/03_归约链/GAP-1a_分割的严格化_裁定.md": {
+      "sha256": "9799de95acd52b92b55e61f3af64d83de03f9062d3dddfd3880601b619499c48",
+      "bytes": 8592
+    },
+    "PI_PI/04_缺口/缺口登记.md": {
+      "sha256": "c479cd95c6cd3fee18ccd88b626fb533779b61abdab54f40d2de79c3255b61cc",
+      "bytes": 25557
+    },
+    "PI_PI/05_条件性定理/Schanuel蕴含π^π超越.md": {
+      "sha256": "d1c0e48ffbfdde81dc6060da867a4ef0627a2cb63c076060ad160ba08f06edaf",
+      "bytes": 14728
+    },
+    "PI_PI/脚本/pi_reduce_chain.py": {
+      "sha256": "17356d8b6eb54ad505d99d9b7cbfcdcaf0a5acabf475b470a0dc08cd18651742",
+      "bytes": 12169
+    },
+    "PI_PI/脚本/pipi_d3_audit_diff.py": {
+      "sha256": "7189cdf52c15650ff11565356f6752f873ab94b85960b746972cd93bf4f0e05b",
+      "bytes": 924
+    },
+    "PI_PI/脚本/pipi_d3_fix_dollar_SUPERSEDED.py": {
+      "sha256": "803c69dcfebd726c80edc795775dd73b33858cc9b7f947d8319a89342e2b04e9",
+      "bytes": 1225
+    },
+    "PI_PI/脚本/pipi_d3_s83_emit.py": {
+      "sha256": "cbe61861576e25899a0688f9773ec6d0164ad352fa5394198ad8b4b1efe25db9",
+      "bytes": 13799
+    },
+    "PI_PI/脚本/pipi_d3_s83_emit_v1_ERRONEOUS.py": {
+      "sha256": "bb74596ff9dad4bfee61a21b083295d35f615074e70000344de64bc10cc57050",
+      "bytes": 9814
+    },
+    "PI_PI/脚本/pipi_d3_s83_numeric.py": {
+      "sha256": "7a3ddf88d2e2105733fa8999ecda1185f1a24c4f171da317b56d9a51c44e91ed",
+      "bytes": 4554
+    },
+    "PI_PI/脚本/pipi_d3_s83_numeric_out.txt": {
+      "sha256": "d2ba4df434d4c67313921d598eaa05f6149e4f217fea47bf0dc94609b68b5970",
+      "bytes": 4091
+    },
+    "PI_PI/脚本/pipi_d3_warroom_record.py": {
+      "sha256": "13db82536bb8b55176df7aece94333339ca990d4ba2c1c0c36354244400dcd8a",
+      "bytes": 5020
+    },
+    "PI_PI/脚本/pipi_domain_boundary.py": {
+      "sha256": "dfd84f714cb6bde87a5cf9b9fe1c5a4d189e410f910ea5138a50eb373f4b69ef",
+      "bytes": 10263
+    },
+    "PI_PI/脚本/pipi_domain_d4_verify.py": {
+      "sha256": "85b3be7b514bab72c573b36a0de36444ebefa902bc1a5f4618835664f0ebe92b",
+      "bytes": 11737
+    },
+    "PI_PI/脚本/pipi_f1_check.py": {
+      "sha256": "d3465eff378e218369d7d10846cf47f869c936cbd79d7d2e1766b999bef87c37",
+      "bytes": 3141
+    },
+    "PI_PI/脚本/pipi_gap1a_test.py": {
+      "sha256": "14bcade9417759796fb8d245bc5d490494ba1cafba1cd1cda58fb6095c4cd04f",
+      "bytes": 15063
+    },
+    "PI_PI/脚本/pipi_rev11_sync_changelog.py": {
+      "sha256": "b63302d2bd84011ad515a4f177754cdc849624aa27bdb974c7db9c8ffa33367f",
+      "bytes": 7105
+    },
+    "PI_PI/脚本/pipi_rev11_sync_hashes.py": {
+      "sha256": "1abbf17e16f30583823e08b43bb79236df27f6faa69cc550f5430087bb4bc6bc",
+      "bytes": 718
+    },
+    "PI_PI/脚本/pipi_rev11_sync_manifest.py": {
+      "sha256": "40edad2756b89c3d4458f0146c690c1e7974fbc15864b5d9daf99f0f3810c7d1",
+      "bytes": 7913
+    },
+    "PI_PI/脚本/pipi_rev11_verify_hashes.py": {
+      "sha256": "90866449d4eb54750aec0bc368fb6fdce4e027fb70ca5918ce7bc840c2e1800a",
+      "bytes": 1121
+    },
+    "PI_PI/脚本/pipi_rev12_sync_manifest.py": {
+      "sha256": "4f354cac65468a7ca55bc5d7395d9b16afb87f27f5211f626c5009892b9c3ed0",
+      "bytes": 7499
+    },
+    "PI_PI/脚本/pipi_rev13_sync_manifest.py": {
+      "sha256": "fd69a6ebe822165af08e61cb92a4735e31610657ddb9235beaedd431f9629539",
+      "bytes": 3044
+    },
+    "PI_PI/脚本/pipi_rev14_diag.py": {
+      "sha256": "0f2f37ef63b8eb58afce0d79f52606604c9638107d954111c45fcc42326969db",
+      "bytes": 1185
+    },
+    "PI_PI/脚本/pipi_rev14_fix.py": {
+      "sha256": "92b966d68a32dfcb745a6302d0fa6ca4b50c1b46fb528e903b369353d10d59d3",
+      "bytes": 2829
+    },
+    "PI_PI/脚本/pipi_rev14_sync_emitter.py": {
+      "sha256": "6c2cadf3d17c79d2c10256282379968e3ddbd0c94acda78b30c6d465ec7d18a6",
+      "bytes": 2304
+    },
+    "PI_PI/脚本/pipi_rev14_sync_manifest.py": {
+      "sha256": "d99424bce9d75ebda297895dc70fa3388f030f2089f35ba6b4ae7c91f7d2341e",
+      "bytes": 4421
+    },
+    "PI_PI/脚本/pipi_schanuel_chain.py": {
+      "sha256": "466867b6f280adadbbc8c72f149a7c9a8dbfa5293f59040e002258996498f8af",
+      "bytes": 5417
+    },
+    "PI_PI/脚本/自纠记录_F2.md": {
+      "sha256": "4b498ff2c246e9cea41ed8e49ca53cf7faf90371a705030b01ffb3d6e3bacb1c",
+      "bytes": 6947
+    },
+    "统一大定理/勘误附录_F_v1.0_W3-W4.md": {
+      "sha256": "8941e64e05c1676bc5a1538d192f3fd0a6d738371938f00b44fce4fddd76be29",
+      "bytes": 152580
+    },
+    "统一大定理/统一大定理存档_v2.2.md": {
+      "sha256": "05574f24b6b951f9c9625fa29155a5540db1f71cd9919a9029f211d2acda7163",
+      "bytes": 22342
+    }
+  }
+}
