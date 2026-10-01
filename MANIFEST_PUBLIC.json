@@ -1,6 +1,6 @@
 {
   "set": "public_theorem",
-  "generated_at": "2026-09-30T22:48:01",
+  "generated_at": "2026-10-01T08:13:53",
   "file_count": 47,
   "note": "公开集哈希锁。脱敏留痕见 REDACTION_REPORT.md；校验器见 verify_public.py（含 Zenodo v1.0.0 占位符复发防线 F4）。",
   "files": {
@@ -13,8 +13,8 @@
       "bytes": 26
     },
     ".zenodo.json": {
-      "sha256": "55ba6e4e35722485fcc716ce627943877c85e845e9ae5f8bd5cd235670754457",
-      "bytes": 2884
+      "sha256": "10b20c0d008be50182ff4e72eb4fa858645e16675545d047c3830e20ee1d3369",
+      "bytes": 3138
     },
     "CHANGELOG.md": {
       "sha256": "cca35c73a0fe59590d091c0af61de5320fc1dec7485bd8816e6410154035c25f",
@@ -185,12 +185,12 @@
       "bytes": 6947
     },
     "统一大定理/勘误附录_F_v1.0_W3-W4.md": {
-      "sha256": "8941e64e05c1676bc5a1538d192f3fd0a6d738371938f00b44fce4fddd76be29",
-      "bytes": 152580
+      "sha256": "56b5d215206c3e2dcb6862bd381581e204a43d7895f89339cc650b6106a63a64",
+      "bytes": 158348
     },
     "统一大定理/统一大定理存档_v2.2.md": {
-      "sha256": "05574f24b6b951f9c9625fa29155a5540db1f71cd9919a9029f211d2acda7163",
-      "bytes": 22342
+      "sha256": "e44c2c8d731ec45ba85f2efdf4899cec08b482d873395df19d1bc265db11935c",
+      "bytes": 23416
     }
   }
 }
